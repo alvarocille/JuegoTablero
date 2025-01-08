@@ -1,6 +1,5 @@
 package dam.pmdm.juegotablero
 
-import dam.pmdm.juegotablero.R
 import kotlin.random.Random
 
 class House(val size: Int = 4) {
