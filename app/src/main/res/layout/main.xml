@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:gravity="center">
+
+    <!-- Icono de la habitación -->
+    <ImageView
+        android:id="@+id/roomIcon"
+        android:layout_width="match_parent"
+        android:layout_height="170dp"
+        android:src="@drawable/ic_room"
+        android:contentDescription="Icono de la habitación" />
+
+    <!-- Descripción de la habitación -->
+    <TextView
+        android:id="@+id/roomDescription"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:contentDescription="Descripción de la habitación"
+        android:text="Descripción de la habitación"
+        android:textAlignment="center"
+        android:textSize="24sp" />
+
+    <!-- Campo de entrada para la respuesta -->
+    <EditText
+        android:id="@+id/answerInput"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:hint="Escribe tu respuesta aquí"
+        android:inputType="text"
+        android:padding="8dp"
+        android:textSize="24sp" />
+
+    <!-- Botón para enviar la respuesta -->
+    <Button
+        android:id="@+id/submitButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Enviar respuesta"
+        android:textSize="24sp" />
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center">
+
+            <Space
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <Button
+                android:id="@+id/buttonNorth"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTintMode="add"
+                android:text="⬆️"
+                android:textSize="60sp" />
+
+            <Space
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center">
+
+            <Button
+                android:id="@+id/buttonWest"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTintMode="add"
+                android:text="⬅️"
+                android:textSize="60sp" />
+
+            <Space
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <Button
+                android:id="@+id/buttonEast"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTintMode="add"
+                android:text="➡️"
+                android:textSize="60sp" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <Space
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <Button
+                android:id="@+id/buttonSouth"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTintMode="add"
+                android:text="⬇️"
+                android:textSize="60sp" />
+
+            <Space
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </TableRow>
+    </TableLayout>
+
+    <!-- Contenedor de botones de navegación (Norte, Oeste, Este, Sur) -->
+
+</LinearLayout>
