@@ -13,7 +13,7 @@
         android:id="@+id/roomIcon"
         android:layout_width="match_parent"
         android:layout_height="170dp"
-        android:src="@drawable/ic_room"
+        android:src="@drawable/question_mark"
         android:contentDescription="Icono de la habitación" />
 
     <!-- Descripción de la habitación -->
