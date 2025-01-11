@@ -1,6 +1,6 @@
 package dam.pmdm.juegotablero.models
 
-data class Challenge(
+data class Riddle(
     val question: String,
     val solution: String
 )

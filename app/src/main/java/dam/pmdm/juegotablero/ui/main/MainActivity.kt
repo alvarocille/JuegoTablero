@@ -1,4 +1,4 @@
-package dam.pmdm.juegotablero
+package dam.pmdm.juegotablero.ui.main
 
 import android.content.Intent
 import android.os.Bundle
@@ -10,11 +10,13 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.ComponentActivity
 import androidx.core.content.ContextCompat
+import dam.pmdm.juegotablero.R
 import dam.pmdm.juegotablero.models.House
 
 class MainActivity : ComponentActivity() {
     private lateinit var roomIcon: ImageView
     private lateinit var roomDescription: TextView
+    private lateinit var roomName: TextView
     private lateinit var answerInput: EditText
     private lateinit var submitButton: Button
     private lateinit var buttonNorth: Button
@@ -22,7 +24,7 @@ class MainActivity : ComponentActivity() {
     private lateinit var buttonEast: Button
     private lateinit var buttonWest: Button
 
-    private val house = House(5, 5) // Ajusta el tamaño de la casa
+    private val house = House(4, 4) // Ajusta el tamaño de la casa
     private var currentRoom = house.getRandomRoom()
     private var previousRoom: Pair<Int, Int>? = null
 
@@ -31,6 +33,7 @@ class MainActivity : ComponentActivity() {
         setContentView(R.layout.main)
 
         roomIcon = findViewById(R.id.roomIcon)
+        roomName = findViewById(R.id.roomName)
         roomDescription = findViewById(R.id.roomDescription)
         answerInput = findViewById(R.id.answerInput)
         submitButton = findViewById(R.id.submitButton)
@@ -39,10 +42,13 @@ class MainActivity : ComponentActivity() {
         buttonEast = findViewById(R.id.buttonEast)
         buttonWest = findViewById(R.id.buttonWest)
 
+        buttonNorth.setBackgroundColor(ContextCompat.getColor(this, R.color.white))
+        buttonSouth.setBackgroundColor(ContextCompat.getColor(this, R.color.white))
+        buttonEast.setBackgroundColor(ContextCompat.getColor(this, R.color.white))
+        buttonWest.setBackgroundColor(ContextCompat.getColor(this, R.color.white))
+
         setupListeners()
         updateUI()
-
-        Log.d("Solucion", house.exitRoom.toString())
     }
 
     private fun setupListeners() {
@@ -65,7 +71,7 @@ class MainActivity : ComponentActivity() {
                     enableMovementButtons()
                     Log.d("MainActivity", "Desbloqueando botones de movimiento")
                 }
-                updateUI() // Asegúrate de actualizar la UI después de cualquier cambio
+                updateUI()
             } else {
                 Toast.makeText(this, "Respuesta incorrecta", Toast.LENGTH_SHORT).show()
                 Log.d("MainActivity", "Respuesta incorrecta")
@@ -84,7 +90,7 @@ class MainActivity : ComponentActivity() {
             else -> currentRoom
         }
         updateUI()
-        Log.d("MainActivity", "Moved to room: $currentRoom")
+        Log.d("MainActivity", "Mover a: $currentRoom")
     }
 
     private fun updateUI() {
@@ -98,17 +104,20 @@ class MainActivity : ComponentActivity() {
             return
         }
 
-        roomDescription.text = if (room.solved) "Habitación resuelta" else room.getCurrentRiddle()
+        roomName.text = room.name
+        if (room.solved) {
+            roomDescription.text = "Habitación resuelta"
+            answerInput.isEnabled = false;
+            enableMovementButtons()
+        } else {
+            roomDescription.text = room.getCurrentRiddle()
+            answerInput.isEnabled = true;
+            disableMovementButtons()
+        }
         roomIcon.setImageResource(room.iconRes)
         answerInput.setText("")
 
-        if (room.solved) {
-            enableMovementButtons()
-        } else {
-            disableMovementButtons()
-        }
-
-        Log.d("MainActivity", "UI updated for room: $currentRoom")
+        Log.d("MainActivity", "UI actualizada en: $currentRoom")
     }
 
     private fun enableMovementButtons() {
@@ -117,16 +126,7 @@ class MainActivity : ComponentActivity() {
         buttonEast.isEnabled = currentRoom.second < house.cols - 1
         buttonWest.isEnabled = currentRoom.second > 0
 
-        previousRoom?.let { previous ->
-            when {
-                previous.first < currentRoom.first -> buttonNorth.setBackgroundColor(ContextCompat.getColor(this, R.color.colorAccent))
-                previous.first > currentRoom.first -> buttonSouth.setBackgroundColor(ContextCompat.getColor(this, R.color.colorAccent))
-                previous.second < currentRoom.second -> buttonWest.setBackgroundColor(ContextCompat.getColor(this, R.color.colorAccent))
-                previous.second > currentRoom.second -> buttonEast.setBackgroundColor(ContextCompat.getColor(this, R.color.colorAccent))
-            }
-        }
-
-        Log.d("MainActivity", "Movement buttons enabled")
+        Log.d("MainActivity", "Botones de movimiento activados")
     }
 
     private fun disableMovementButtons() {
@@ -134,11 +134,6 @@ class MainActivity : ComponentActivity() {
         buttonSouth.isEnabled = false
         buttonEast.isEnabled = false
         buttonWest.isEnabled = false
-
-        buttonNorth.setBackgroundColor(ContextCompat.getColor(this, R.color.colorPrimary))
-        buttonSouth.setBackgroundColor(ContextCompat.getColor(this, R.color.colorPrimary))
-        buttonEast.setBackgroundColor(ContextCompat.getColor(this, R.color.colorPrimary))
-        buttonWest.setBackgroundColor(ContextCompat.getColor(this, R.color.colorPrimary))
 
         // Mantener habilitado el botón que lleva a la habitación anterior
         previousRoom?.let { previous ->
@@ -150,6 +145,6 @@ class MainActivity : ComponentActivity() {
             }
         }
 
-        Log.d("MainActivity", "Movement buttons disabled")
+        Log.d("MainActivity", "Botones de movimiento desactivados")
     }
 }

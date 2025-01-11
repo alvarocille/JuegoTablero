@@ -1,9 +1,10 @@
-package dam.pmdm.juegotablero
+package dam.pmdm.juegotablero.ui.main
 
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import androidx.activity.ComponentActivity
+import dam.pmdm.juegotablero.R
 
 class VictoryActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

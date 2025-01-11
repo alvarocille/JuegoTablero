@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -14,27 +13,38 @@
         android:layout_width="match_parent"
         android:layout_height="170dp"
         android:src="@drawable/question_mark"
-        android:contentDescription="Icono de la habitación" />
+        android:contentDescription="@string/room_icon_description" />
 
     <!-- Descripción de la habitación -->
+    <TextView
+        android:id="@+id/roomName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:contentDescription="@string/room_name"
+        android:text="@string/room_name"
+        android:textAlignment="center"
+        android:textSize="24sp" />
+
     <TextView
         android:id="@+id/roomDescription"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:contentDescription="Descripción de la habitación"
-        android:text="Descripción de la habitación"
+        android:contentDescription="@string/room_description"
+        android:text="@string/room_description"
         android:textAlignment="center"
         android:textSize="24sp" />
 
     <!-- Campo de entrada para la respuesta -->
+
     <EditText
         android:id="@+id/answerInput"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:ems="10"
-        android:hint="Escribe tu respuesta aquí"
+        android:hint="@string/answer_hint"
         android:inputType="text"
         android:padding="8dp"
         android:textSize="24sp" />
@@ -45,7 +55,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="Enviar respuesta"
+        android:text="@string/submit_button_text"
         android:textSize="24sp" />
 
     <TableLayout
@@ -67,7 +77,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:backgroundTintMode="add"
-                android:text="⬆️"
+                android:text="@string/button_north"
+                android:textColorLink="#E20000"
                 android:textSize="60sp" />
 
             <Space
@@ -86,7 +97,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:backgroundTintMode="add"
-                android:text="⬅️"
+                android:text="@string/button_west"
                 android:textSize="60sp" />
 
             <Space
@@ -98,7 +109,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:backgroundTintMode="add"
-                android:text="➡️"
+                android:text="@string/button_east"
                 android:textSize="60sp" />
 
         </TableRow>
@@ -118,7 +129,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:backgroundTintMode="add"
-                android:text="⬇️"
+                android:text="@string/button_south"
                 android:textSize="60sp" />
 
             <Space
