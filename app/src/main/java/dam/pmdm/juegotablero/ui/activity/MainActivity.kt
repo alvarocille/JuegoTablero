@@ -29,7 +29,7 @@ class MainActivity : ComponentActivity() {
     private lateinit var buttonEast: Button
     private lateinit var buttonWest: Button
 
-    private val house = House(2, 1) // Ajusta el tamaño de la casa
+    private val house = House(4, 4) // Tamaño de la casa ajustable
     private var currentRoom = house.getRandomRoom()
     private var previousRoom: Pair<Int, Int>? = null
     private var victorySolved = false
@@ -53,7 +53,6 @@ class MainActivity : ComponentActivity() {
         gameStats = GameStats()
 
         launchVictoryActivity = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {
-            // Aquí podrías manejar el resultado de la actividad VictoryActivity si es necesario
         }
 
         setupListeners()
@@ -83,7 +82,7 @@ class MainActivity : ComponentActivity() {
                     if (house.isExitRoom(currentRoom)) {
                         victorySolved = true
                         Log.d("MainActivity", "Habitación de victoria resuelta")
-                        animateDoorSlideAndProceed()
+                        launchVictory()
                     } else {
                         enableMovementButtons()
                         Log.d("MainActivity", "Desbloqueando botones de movimiento")
@@ -164,12 +163,12 @@ class MainActivity : ComponentActivity() {
         Log.d("MainActivity", "Botones de movimiento desactivados")
     }
 
-    private fun animateDoorSlideAndProceed() {
+    private fun launchVictory() {
         val animation = AnimationUtils.loadAnimation(this, R.anim.open_door)
         roomIcon.startAnimation(animation)
         animation.setAnimationListener(object : Animation.AnimationListener {
             override fun onAnimationStart(animation: Animation) {
-                // No se necesita acción aquí
+                // No necesario
             }
 
             override fun onAnimationEnd(animation: Animation) {
@@ -183,11 +182,9 @@ class MainActivity : ComponentActivity() {
             }
 
             override fun onAnimationRepeat(animation: Animation) {
-                // No se necesita acción aquí
+                // No necesario
             }
         })
-
-        Log.d("MainActivity", "Animación de puerta deslizándose y transición a pantalla de victoria")
     }
 
 }
