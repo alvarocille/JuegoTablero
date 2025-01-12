@@ -1,19 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_margin="5dp"
+    android:background="@color/colorBackground"
+    android:gravity="center"
     android:orientation="vertical"
-    android:padding="16dp"
-    android:gravity="center">
+    android:padding="30dp">
 
     <!-- Icono de la habitación -->
     <ImageView
         android:id="@+id/roomIcon"
         android:layout_width="match_parent"
         android:layout_height="170dp"
-        android:src="@drawable/question_mark"
-        android:contentDescription="@string/room_icon_description" />
+        android:contentDescription="@string/room_icon_description"
+        android:paddingTop="20dp"
+        android:src="@drawable/question_mark" />
 
     <!-- Descripción de la habitación -->
     <TextView
@@ -36,7 +38,7 @@
         android:textAlignment="center"
         android:textSize="24sp" />
 
-    <!-- Campo de entrada para la respuesta -->
+    <!-- Campo de ennombretrada para la respuesta -->
 
     <EditText
         android:id="@+id/answerInput"
@@ -76,6 +78,7 @@
                 android:id="@+id/buttonNorth"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:background="@color/colorBackground"
                 android:backgroundTintMode="add"
                 android:text="@string/button_north"
                 android:textColorLink="#E20000"
@@ -96,6 +99,7 @@
                 android:id="@+id/buttonWest"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:background="@color/colorBackground"
                 android:backgroundTintMode="add"
                 android:text="@string/button_west"
                 android:textSize="60sp" />
@@ -108,6 +112,7 @@
                 android:id="@+id/buttonEast"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:background="@color/colorBackground"
                 android:backgroundTintMode="add"
                 android:text="@string/button_east"
                 android:textSize="60sp" />
@@ -128,6 +133,7 @@
                 android:id="@+id/buttonSouth"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:background="@color/colorBackground"
                 android:backgroundTintMode="add"
                 android:text="@string/button_south"
                 android:textSize="60sp" />

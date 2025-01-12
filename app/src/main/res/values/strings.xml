@@ -3,12 +3,18 @@
     <string name="room_icon_description">Icono de la habitación</string>
     <string name="room_name">Habitación A%1$d%2$dB%3$d%4$d</string>
     <string name="room_description">Descripción de la habitación</string>
+    <string name="room_solved">Habitación resuelta</string>
     <string name="answer_hint">Escribe tu respuesta aquí</string>
     <string name="submit_button_text">Enviar respuesta</string>
     <string name="button_north" translatable="false">⬆️</string>
     <string name="button_west" translatable="false">⬅️</string>
     <string name="button_east" translatable="false">➡️</string>
     <string name="button_south" translatable="false">⬇️</string>
+    <string name="candy">Caramelo de la victoria</string>
     <string name="winner_message">¡Felicidades, has ganado!</string>
     <string name="restart_game">Reiniciar juego</string>
+    <string name="riddles_solved">Acertijos resueltos:</string>
+    <string name="wrong_tries">Intentos fallidos:</string>
+    <string name="visited_rooms">Salas visitadas:</string>
+    <string name="time">Tiempo empleado:</string>
 </resources>

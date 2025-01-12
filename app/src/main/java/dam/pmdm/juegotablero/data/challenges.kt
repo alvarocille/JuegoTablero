@@ -46,8 +46,24 @@ val listOfRiddles = listOf(
     Riddle("Tengo ciudades pero no casas, montañas pero no árboles, y agua pero no peces. ¿Qué soy?", "Mapa"),
     Riddle("Tiene una cabeza, una pata, y cuatro patas. ¿Qué es?", "Cama"),
     Riddle("Tiene agujas pero no es un pino, guarda el tiempo pero no es un reloj. ¿Qué es?", "Brújula"),
-    Riddle("Soy alto cuando soy joven y corto cuando soy viejo. ¿Qué soy?", "Vela"),
-    Riddle("Tengo una habitación llena de espejos y mi reflejo no se ve. ¿Quién soy?", "Vampiro")
+    Riddle("Tengo una habitación llena de espejos y mi reflejo no se ve. ¿Quién soy?", "Vampiro"),
+    Riddle("¿Qué es algo que se parte al hablar?", "Silencio"),
+    Riddle("Me puedes encontrar en el cielo pero no en la tierra. ¿Qué soy?", "Estrella"),
+    Riddle("Cuanto más vacío, más pesa. ¿Qué es?", "Agujero"),
+    Riddle("Tengo un cuerpo lleno de plumas pero no soy un ave. ¿Qué soy?", "Almohada"),
+    Riddle("Sin alas puedo volar, sin voz puedo llorar. ¿Qué soy?", "Nube"),
+    Riddle("Entre más limpio, más sucio me vuelvo. ¿Qué soy?", "Bañera"),
+    Riddle("Camino sobre patas pero no soy un animal. ¿Qué soy?", "Silla"),
+    Riddle("Vivo en la esquina pero viajo por todas partes. ¿Qué soy?", "Sello"),
+    Riddle("Siempre vengo después del trueno. ¿Qué soy?", "Relámpago"),
+    Riddle("Soy más corto cuando soy fuerte y más largo cuando soy débil. ¿Qué soy?", "Vela"),
+    Riddle("Puedes escucharme, pero nunca puedes verme. ¿Qué soy?", "Voz"),
+    Riddle("Vuelo alto pero no tengo alas, ilumino la oscuridad. ¿Qué soy?", "Cometa"),
+    Riddle("Me usas a diario pero no me ves. ¿Qué soy?", "Aire"),
+    Riddle("Soy negro por fuera y blanco por dentro, y ayudo a los estudiantes. ¿Qué soy?", "Pizarra"),
+    Riddle("Vuelo al espacio pero no tengo vida. ¿Qué soy?", "Satélite"),
+    Riddle("Puedo guardar secretos y contener palabras, pero nunca hablo. ¿Qué soy?", "Libro"),
+    Riddle("Me caigo y desaparezco, pero soy el comienzo de algo hermoso. ¿Qué soy?", "Semilla"),
+    Riddle("Siempre me usas pero nunca me guardas. ¿Qué soy?", "Nombre"),
+    Riddle("Siempre está ahí pero nunca lo ves. ¿Qué es?", "Futuro")
 )
-
-

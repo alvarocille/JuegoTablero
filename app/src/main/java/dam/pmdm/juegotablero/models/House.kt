@@ -1,5 +1,6 @@
 package dam.pmdm.juegotablero.models
 
+import dam.pmdm.juegotablero.R
 import kotlin.random.Random
 
 class House(val rows: Int, val cols: Int, seed: Long = System.currentTimeMillis()) {
@@ -11,7 +12,11 @@ class House(val rows: Int, val cols: Int, seed: Long = System.currentTimeMillis(
             Room(roomName, description)
         }
     }
-    val exitRoom = Pair(random.nextInt(rows), random.nextInt(cols))
+    private val exitRoom = Pair(random.nextInt(rows), random.nextInt(cols))
+
+    init {
+        rooms[exitRoom.first][exitRoom.second].iconRes = R.drawable.door
+    }
 
     fun getRoom(row: Int, col: Int): Room = rooms[row][col]
 
@@ -27,4 +32,3 @@ class House(val rows: Int, val cols: Int, seed: Long = System.currentTimeMillis(
 
     fun isExitRoom(room: Pair<Int, Int>): Boolean = room == exitRoom
 }
-

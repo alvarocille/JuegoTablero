@@ -27,6 +27,7 @@ data class Room(
     }
 
     fun hasMoreRiddles(): Boolean {
+        this.iconRes = R.drawable.ghost_dead
         return currentRiddleIndex < riddles.size - 1
     }
 

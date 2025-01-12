@@ -14,7 +14,7 @@
         android:theme="@style/Theme.JuegoTablero"
         tools:targetApi="31">
         <activity
-            android:name=".ui.main.MainActivity"
+            android:name=".ui.activity.MainActivity"
             android:exported="true"
             android:theme="@style/Theme.JuegoTablero">
             <intent-filter>
@@ -23,7 +23,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ui.main.VictoryActivity" />
+        <activity android:name=".ui.activity.VictoryActivity" />
     </application>
 
 </manifest>
