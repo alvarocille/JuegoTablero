@@ -2,6 +2,7 @@ package dam.pmdm.juegotablero.models
 
 import dam.pmdm.juegotablero.R
 import dam.pmdm.juegotablero.data.listOfRiddles
+import dam.pmdm.juegotablero.utils.normalizeString
 import kotlin.random.Random
 
 data class Room(
@@ -23,7 +24,9 @@ data class Room(
     }
 
     fun solveChallenge(userAnswer: String): Boolean {
-        return riddles[currentRiddleIndex].solution.equals(userAnswer.trim(), ignoreCase = true)
+        val normalizedUserAnswer = userAnswer.normalizeString()
+        val normalizedSolution = riddles[currentRiddleIndex].solution.normalizeString()
+        return normalizedSolution.equals(normalizedUserAnswer.trim(), ignoreCase = true)
     }
 
     fun hasMoreRiddles(): Boolean {
