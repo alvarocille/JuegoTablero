@@ -1,4 +1,4 @@
-package dam.pmdm.juegotablero.models
+package dam.pmdm.juegotablero.models.gamestats
 
 import android.os.SystemClock
 

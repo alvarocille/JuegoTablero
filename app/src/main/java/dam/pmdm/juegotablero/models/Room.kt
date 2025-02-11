@@ -1,11 +1,11 @@
 package dam.pmdm.juegotablero.models
 
 import dam.pmdm.juegotablero.R
-import dam.pmdm.juegotablero.data.listOfRiddles
+import dam.pmdm.juegotablero.data.globalRiddles
 import dam.pmdm.juegotablero.utils.normalizeString
 import kotlin.random.Random
 
-data class Room(
+class Room(
     val name: String,
     var description: String,
 ) {
@@ -16,11 +16,14 @@ data class Room(
 
     init {
         val random = Random(System.currentTimeMillis())
-        val ghost = if (random.nextDouble() < 0.1) true else false
+        val ghost = random.nextDouble() < 0.1
         iconRes = if (ghost) R.drawable.ghost else R.drawable.question_mark
-        riddles = List( if (ghost) 2 else 1) {
-            listOfRiddles.random()
-        }
+        val availableRiddles = globalRiddles.ifEmpty { listOf(defaultRiddle()) }
+        riddles = List(if (ghost) 2 else 1) { availableRiddles.random() }
+    }
+
+    private fun defaultRiddle(): Riddle {
+        return Riddle(question = "Pregunta por defecto", solution = "Respuesta")
     }
 
     fun solveChallenge(userAnswer: String): Boolean {

@@ -1,4 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!-- Recursos existentes -->
     <string name="app_name" translatable="false">Casa Locurita</string>
     <string name="room_icon_description">Icono de la habitación</string>
     <string name="room_name">Habitación A%1$d%2$dB%3$d%4$d</string>
@@ -17,4 +19,16 @@
     <string name="wrong_tries">Intentos fallidos:</string>
     <string name="visited_rooms">Salas visitadas:</string>
     <string name="time">Tiempo empleado:</string>
+    <string name="username_hint">Nombre de usuario</string>
+    <string name="password_hint">Contraseña</string>
+    <string name="login_button_text">Iniciar sesión</string>
+    <string name="app_logo">Logo de Casa Locurita</string>
+    <string name="best_stats_title">Mejores estadísticas</string>
+    <string name="seconds">segundos</string>
+    <string name="best_riddles_solved">Mejores acertijos:</string>
+    <string name="best_failed_attempts">Mejores fallos:</string>
+    <string name="best_rooms_visited">Mejores salas:</string>
+    <string name="best_time">Mejor tiempo:</string>
+
 </resources>
+

@@ -1,62 +1,110 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorBackground"
-    android:gravity="center"
-    android:orientation="vertical"
-    android:padding="16dp">
+    android:background="@color/colorBackground">
 
-    <ImageView
-        android:id="@+id/animationView"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:contentDescription="@string/candy"
-        android:src="@drawable/candy" />
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="16dp">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="24dp"
-        android:text="@string/winner_message"
-        android:textSize="24sp"
-        android:textStyle="bold" />
+        <ImageView
+            android:id="@+id/animationView"
+            android:layout_width="335dp"
+            android:layout_height="291dp"
+            android:contentDescription="@string/candy"
+            android:src="@drawable/candy" />
 
-    <TextView
-        android:id="@+id/riddlesSolved"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:text="@string/riddles_solved"
-        android:textSize="18sp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp"
+            android:text="@string/winner_message"
+            android:textSize="24sp"
+            android:textStyle="bold" />
 
-    <TextView
-        android:id="@+id/failedAttempts"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:text="@string/wrong_tries"
-        android:textSize="18sp" />
+        <TextView
+            android:id="@+id/riddlesSolved"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:text="@string/riddles_solved"
+            android:textSize="18sp" />
 
-    <TextView
-        android:id="@+id/roomsVisited"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:text="@string/visited_rooms"
-        android:textSize="18sp" />
+        <TextView
+            android:id="@+id/failedAttempts"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:text="@string/wrong_tries"
+            android:textSize="18sp" />
 
-    <TextView
-        android:id="@+id/elapsedTime"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="24dp"
-        android:text="@string/time"
-        android:textSize="18sp" />
+        <TextView
+            android:id="@+id/roomsVisited"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:text="@string/visited_rooms"
+            android:textSize="18sp" />
 
-    <Button
-        android:id="@+id/restartButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/restart_game" />
-</LinearLayout>
+        <TextView
+            android:id="@+id/elapsedTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp"
+            android:text="@string/time"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/bestStatsTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="8dp"
+            android:text="@string/best_stats_title"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/bestRiddlesSolved"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="4dp"
+            android:text="@string/riddles_solved"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/bestFailedAttempts"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="4dp"
+            android:text="@string/wrong_tries"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/bestRoomsVisited"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="4dp"
+            android:text="@string/visited_rooms"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/bestElapsedTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp"
+            android:text="@string/best_time"
+            android:textSize="18sp" />
+
+        <Button
+            android:id="@+id/restartButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/restart_game" />
+
+    </LinearLayout>
+</ScrollView>
